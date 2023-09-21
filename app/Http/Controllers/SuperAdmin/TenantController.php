@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 class TenantController extends Controller
 {
     public function index(){
-        $tenants = Tenants::all();
-dd($tenants);
-        return redirect('superAdmin/index');
+       
+// dd($tenants);
+        return view('superAdmin/index');
     }
     
 }
