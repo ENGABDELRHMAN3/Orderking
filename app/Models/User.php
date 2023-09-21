@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Scopes\TenantScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -22,6 +23,13 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+
+    // protected static function boot()
+    // {
+    //     parent::boot();
+
+    //     static::addGlobalScope(new TenantScope());
+    // }
 
     /**
      * The attributes that should be hidden for serialization.

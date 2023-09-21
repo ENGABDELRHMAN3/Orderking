@@ -17,21 +17,13 @@ class TenantMiddelware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        //Obtaining a tenant domain to get Database Info
-        $host= $request->getHost();
+        // //Obtaining a tenant domain to get Database Info
+        // $host= $request->getHost();
 
-        //get database info
-        $tanant = Tenants::where('domain',$host)->firstOrFail();
-       
-//SET DATABASE CONECTION TO TENANT
-        DB::purge('mysql');
-        DB::purge('tenant');
-        config()->set('database.connections.tenant.database' , $tanant->DB_DATABASE);
-        config()->set('database.connections.tenant.username' , $tanant->DB_USERNAME);
-        config()->set('database.connections.tenant.password' , $tanant->DB_PASSWORD);
-    
-        DB::connection('tenant')->reconnect();
-        DB::setDefaultConnection('tenant');
+        // //get database info
+        // $tanant = Tenants::where('ApiKey',$host)->firstOrFail();
+   
+        // $request->tenant_key = $tanant->ApiKey;
         return $next($request);
     }
 }

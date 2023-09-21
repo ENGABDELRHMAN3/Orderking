@@ -16,9 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('ApiKey')->unique();
             $table->string('domain')->unique();
-            $table->string('DB_DATABASE')->unique();
-            $table->string('DB_USERNAME');
-            $table->string('DB_PASSWORD');
             $table->timestamps();
         });
     }
