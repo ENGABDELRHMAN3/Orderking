@@ -1,6 +1,12 @@
-{{-- @foreach ($tenants as $tenant)
-    <h1>{{$tenant->name}}</h1>
-@endforeach --}}
+@extends('layout.superAdmin.layout')
+    <!-- END: Main Menu-->
 
+    @section('content')
+    <div class="app-content content ">
+      
+        <div class="content-body">
+            <livewire:SupeerAdmin />
 
-<h1>Iam here</h1>
+      </div>
+    </div>
+@endsection
