@@ -30,8 +30,9 @@ use Inertia\Inertia;
 //     return Inertia::render('Dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::prefix('SuperAdmin')->group(function () {
+Route::middleware('SuperAdmin')->prefix('SuperAdmin')->group(function () {
     Route::get('/tenant', [TenantController::class, 'index']);
+    Route::get('/tenant/users{key}', [TenantController::class, 'TenantUsers']);
     
 });
 
