@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,14 +22,12 @@ class SuperAdminMiddelware
      * to be SuperAdmin connection
      *  but this wall is just for confirmation
      */
-        DB::purge('tenant');
-        DB::connection('mysql')->reconnect();
-        DB::setDefaultConnection('mysql');
+      
 
-
-        // if (!auth()->user()->SuperAdmin == 1) {
-        //     abort(404, 'Page not found');
-        // }
+        if (Auth::check() && Auth::user()->SuperAdmin == 1) {
+            abort(404, 'Page not found');
+        }
+       
         return $next($request);
     }
 }

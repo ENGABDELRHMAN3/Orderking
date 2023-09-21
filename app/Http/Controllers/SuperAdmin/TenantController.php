@@ -10,8 +10,12 @@ class TenantController extends Controller
 {
     public function index(){
         $tenants = Tenants::all();
-dd($tenants);
-        return redirect('superAdmin/index');
+        return view('admin.index', compact('tenants'));
+    }
+
+    public function TenantUsers($key){
+        $tenant = Tenants::whereApiKey($key)->get();
+        dd($tenant);
     }
     
 }
