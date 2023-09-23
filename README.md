@@ -41,8 +41,28 @@ This project is a Laravel application designed to achieve multiple objectives an
 - In this configuration, each tenant has its own separate database.
 - You can switch to this branch to work with a multiple-databases setup.
 
-## Setting Up and Testing
-- To set up and test the project with your preferred database configuration, first clone the repository and then switch to the appropriate branch.
+
+
+## Setting Up and Testing  Single Database Configuration
+- To set up and test the project based on your preferred database configuration, first clone the repository and then switch to the appropriate branch.
+- Configure your login information and other settings in the `.env` file.
 - Follow the instructions in the README of the selected branch to set up the database and run the application.
 
-This project represents a flexible approach to multi-tenancy, allowing you to choose between a single-database and multiple-databases setup based on your project's requirements.
+    -composer install
+      -npm install
+      -npm run build 
+      -php artisan migrate
+      -php db:seed
+      
+## Shared Login Interface
+- The login interface is shared among all users.
+- Each tenant has the flexibility to customize their user interface as needed without affecting the login process.
+
+## Accessing the Application
+- If you are using an IP address as the default tenant identifier, you can access the application via the following link:
+http://127.0.0.1:8000/
+- By default, it assumes that the tenant with the name "kfc" is configured in the `.env` file.
+- Users from other tenants will not have access to the data of the default tenant.
+
+This setup allows you to run the application successfully with multi-tenancy configuration and InertiaJS.
+
