@@ -27,4 +27,22 @@ A simple dashboard was created to welcome the user.
 5. Creating Seeders for Data
 Seeders were created to populate initial data, including the creation of a super admin, 30 merchants, and 100 users for each merchant.
 
-This project represents a first step in building a multi-tenant application in Laravel and can be extended and developed to meet the actual project requirements. If you have any questions or improvements you'd like to make, feel free to get in touch and contribute to the development of this project.
+# Multi-Tenant Laravel Project with InertiaJS
+
+This project is a Laravel application designed to achieve multiple objectives and tasks that contribute to providing a simple and efficient multi-tenant user experience. The project was implemented with a multi-branch approach, where two separate branches were created, each representing a different database configuration:
+
+## Branch 1: Single Database Configuration
+- The 'single-database' branch contains the code and configuration for a single-database approach.
+- In this configuration, all tenants share a common database.
+- You can switch to this branch to work with a single-database setup.
+
+## Branch 2: Multiple Databases Configuration
+- The 'multiple-databases' branch contains the code and configuration for a multiple-databases approach.
+- In this configuration, each tenant has its own separate database.
+- You can switch to this branch to work with a multiple-databases setup.
+
+## Setting Up and Testing
+- To set up and test the project with your preferred database configuration, first clone the repository and then switch to the appropriate branch.
+- Follow the instructions in the README of the selected branch to set up the database and run the application.
+
+This project represents a flexible approach to multi-tenancy, allowing you to choose between a single-database and multiple-databases setup based on your project's requirements.
