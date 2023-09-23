@@ -18,6 +18,12 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected static function boot()
+{
+    parent::boot();
+
+    static::addGlobalScope(new TenantScope());
+}
     protected $fillable = [
         'name',
         'email',

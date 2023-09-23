@@ -1,5 +1,6 @@
-<?php
+<!-- <?php
 
+use App\Http\Controllers\Admin\DashbordController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SuperAdmin\TenantController;
 use Illuminate\Foundation\Application;
@@ -30,9 +31,8 @@ use Inertia\Inertia;
 //     return Inertia::render('Dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware(['SuperAdmin','auth'])->prefix('SuperAdmin')->group(function () {
-    Route::get('/tenant', [TenantController::class, 'index'])->name('SuperAdmin.tenant');
-    Route::get('/tenant/users/{key}', [TenantController::class, 'TenantUsers'])->name('tenant');
+Route::middleware(['Admin','auth'])->prefix('Admin')->group(function () {
+    Route::get('/',[DashbordController::class,'index'])->name('Admin.Dashbord');
 
 });
 

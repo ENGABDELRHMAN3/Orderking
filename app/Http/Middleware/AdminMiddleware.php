@@ -2,13 +2,12 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\SuperAdmmin\Tenants;
+use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\DB;
 
-class TenantMiddelware
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,12 +16,9 @@ class TenantMiddelware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        //Obtaining a tenant domain to get Database Info
-        $host= $request->getHost();
-
-        //get database info
-        $tanant = Tenants::where('domin',$host)->firstOrFail();
-        $request->ApiKey = $tanant->ApiKey;
+        if(!auth()->user()->isAdmin ==1){
+            return redirect('home')->with('error','You have not admin access');
+        }
         return $next($request);
     }
 }

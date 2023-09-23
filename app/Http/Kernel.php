@@ -2,7 +2,11 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\SuperAdminMiddelware;
+// use App\Http\Middleware\SuperAdminMiddelware;
+
+// use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\SuperAdminMiddelwaree;
 use App\Http\Middleware\TenantApiMiddelware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -69,7 +73,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'tenant'   => TenantApiMiddelware::class,
-        'SuperAdmin' => SuperAdminMiddelware::class,
+        'SuperAdmin' => SuperAdminMiddelwaree::class,
+        'Admin' =>AdminMiddleware::class,
 
     ];
 }

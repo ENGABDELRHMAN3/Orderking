@@ -1,21 +1,97 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description"
+        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Dashboard ecommerce - Vuexy - Bootstrap HTML admin template</title>
+    <link rel="apple-touch-icon" href="{{ asset('app-assets') }}/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('app-assets') }}/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
+        rel="stylesheet">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets') }}/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets') }}/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets') }}/vendors/css/extensions/toastr.min.css">
+    <!-- END: Vendor CSS-->
 
-        <!-- Scripts -->
-        @routes
-        @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
-        @inertiaHead
-    </head>
-    <body class="font-sans antialiased">
-        @inertia
-    </body>
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets') }}/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets') }}/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets') }}/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets') }}/css/components.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets') }}/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets') }}/css/themes/bordered-layout.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('app-assets') }}/css/core/menu/menu-types/horizontal-menu.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets') }}/css/pages/dashboard-ecommerce.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets') }}/css/plugins/charts/chart-apex.css">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('app-assets') }}/css/plugins/extensions/ext-component-toastr.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('superAdmin/layout/hedar/assets') }}/css/style.css">
+    <!-- END: Custom CSS-->
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title inertia>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+    <!-- Scripts -->
+    @routes
+    @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
+    @inertiaHead
+</head>
+
+<body class="font-sans antialiased">
+    @inertia
+
+
+<!-- BEGIN: Vendor JS-->
+<script src="{{asset("")}}app-assets/vendors/js/vendors.min.js"></script>
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="{{asset("")}}app-assets/vendors/js/ui/jquery.sticky.js"></script>
+<script src="{{asset("")}}app-assets/vendors/js/charts/apexcharts.min.js"></script>
+<script src="{{asset("")}}app-assets/vendors/js/extensions/toastr.min.js"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+<script src="{{asset("")}}app-assets/js/core/app-menu.js"></script>
+<script src="{{asset("")}}app-assets/js/core/app.js"></script>
+<!-- END: Theme JS-->
+
+<!-- BEGIN: Page JS-->
+<script src="{{asset("")}}app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
+<!-- END: Page JS-->
+
+<script>
+    $(window).on('load', function() {
+        if (feather) {
+            feather.replace({
+                width: 14,
+                height: 14
+            });
+        }
+    })
+</script>
+</body>
+
 </html>

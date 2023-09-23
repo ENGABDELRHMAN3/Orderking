@@ -18,6 +18,7 @@ return new class extends Migration
             ->on('tenants')
             ->onDelete('cascade');
 
+            $table->integer('isAdmin')->default(0);
             $table->integer('SuperAdmin')->default(0);
         });
     }

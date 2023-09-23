@@ -7,8 +7,9 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\DB;
+use Termwind\Components\Dd;
 
-class SuperAdminMiddelware
+class SuperAdminMiddelwaree
 {
     /**
      * Handle an incoming request.
@@ -17,17 +18,11 @@ class SuperAdminMiddelware
      */
     public function handle(Request $request, Closure $next): Response
     {
-    /**
-     * Iam allrady set the defulte connection in the "config\database.php" file,
-     * to be SuperAdmin connection
-     *  but this wall is just for confirmation
-     */
-      
 
-        if (Auth::check() && Auth::user()->SuperAdmin == 1) {
-            abort(404, 'Page not found');
+        if (!Auth::user()->SuperAdmin == 1) {
+            return redirect('home')->with('error','You have not admin access');
         }
-       
+
         return $next($request);
     }
 }

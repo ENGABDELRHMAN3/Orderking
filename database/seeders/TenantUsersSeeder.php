@@ -18,6 +18,16 @@ class TenantUsersSeeder extends Seeder
 
 
         foreach ($tenants as $tenant) {
+
+            \App\Models\User::create([
+                'name' => 'Test Super Admin',
+                'email' => fake()->unique()->safeEmail,
+                'password' => bcrypt('123456789'),
+                'isAdmin' => 1,
+                'ApiKey' => $tenant->ApiKey,
+
+            ]);
+
             for ($i = 0; $i < 100; $i++) {
                 $email = fake()->unique()->safeEmail;
                 \App\Models\User::create([
