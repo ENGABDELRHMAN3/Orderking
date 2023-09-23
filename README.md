@@ -7,60 +7,62 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About This Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Multi-Tenant Laravel Project with InertiaJS
+This project is a Laravel application designed to achieve multiple objectives and tasks that contribute to providing a simple and efficient multi-tenant user experience. The project was implemented as follows:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. Setting Up the Laravel Project and Configuring Multi-Tenancy
+A Laravel project was created from scratch and configured to support multi-tenancy without using any multi-tenancy packages. User authentication was included, and InertiaJS was used to enhance the user experience.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2. Creating a Superadmin Dashboard
+A simple dashboard was created to display all merchants and users associated with each merchant.
 
-## Learning Laravel
+3. Creating a Merchant Dashboard
+A simple dashboard was created to display all users associated with the current merchant.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+4. Creating a User Dashboard
+A simple dashboard was created to welcome the user.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+5. Creating Seeders for Data
+Seeders were created to populate initial data, including the creation of a super admin, 30 merchants, and 100 users for each merchant.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# Multi-Tenant Laravel Project with InertiaJS
 
-## Laravel Sponsors
+This project is a Laravel application designed to achieve multiple objectives and tasks that contribute to providing a simple and efficient multi-tenant user experience. The project was implemented with a multi-branch approach, where two separate branches were created, each representing a different database configuration:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Branch 1: Single Database Configuration
+- The 'single-database' branch contains the code and configuration for a single-database approach.
+- In this configuration, all tenants share a common database.
+- You can switch to this branch to work with a single-database setup.
 
-### Premium Partners
+## Branch 2: Multiple Databases Configuration
+- The 'multiple-databases' branch contains the code and configuration for a multiple-databases approach.
+- In this configuration, each tenant has its own separate database.
+- You can switch to this branch to work with a multiple-databases setup.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Setting Up and Testing  Single Database Configuration
+- To set up and test the project based on your preferred database configuration, first clone the repository and then switch to the appropriate branch.
+- Configure your login information and other settings in the `.env` file.
+- Follow the instructions in the README of the selected branch to set up the database and run the application.
 
-## Code of Conduct
+    -composer install
+      -npm install
+      -npm run build 
+      -php artisan migrate
+      -php db:seed
+      
+## Shared Login Interface
+- The login interface is shared among all users.
+- Each tenant has the flexibility to customize their user interface as needed without affecting the login process.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Accessing the Application
+- If you are using an IP address as the default tenant identifier, you can access the application via the following link:
+http://127.0.0.1:8000/
+- By default, it assumes that the tenant with the name "kfc" is configured in the `.env` file.
+- Users from other tenants will not have access to the data of the default tenant.
 
-## Security Vulnerabilities
+This setup allows you to run the application successfully with multi-tenancy configuration and InertiaJS.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
