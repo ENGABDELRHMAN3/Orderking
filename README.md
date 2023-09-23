@@ -64,5 +64,44 @@ http://127.0.0.1:8000/
 - By default, it assumes that the tenant with the name "kfc" is configured in the `.env` file.
 - Users from other tenants will not have access to the data of the default tenant.
 
+  ## Default User Credentials 
+
+### Superadmin 
+- Email: test@example.com
+- Password: 1234564789
+
+### Merchant 
+- Email: gibson.eino@example.net
+- Password: 123456798
+
+#### Merchant's Users
+- User 1:
+  - Email: nlangworth@example.org
+  - Password: 123456798
+- User 2:
+  - Email: reynold33@example.org
+  - Password: 123456798
+- User 3:
+  - Email: uschiller@example.com
+  - Password: 123456798
+
+### Another Merchant
+- Email: alayna36@example.org
+- Password: 123456789
+
+#### Merchant's Users 
+- User 1:
+  - Email: ehand@example.org
+  - Password: 123456798
+- User 2:
+  - Email: davon84@example.org
+  - Password: 123456798
+- User 3:
+  - Email: hahn.ada@example.net
+  - Password: 123456789
+
+
 This setup allows you to run the application successfully with multi-tenancy configuration and InertiaJS.
+
+
 
